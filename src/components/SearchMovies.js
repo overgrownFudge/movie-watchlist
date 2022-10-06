@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import MovieCard from './MovieCard'
 
 export default function SearchMovies() {
 
@@ -42,7 +43,9 @@ export default function SearchMovies() {
             {results.length > 0 && (
               <ul className='results'>
                 {results.map((movie) => (
-                  <li>{movie.Title}</li>
+                  <li key = {movie.id}>
+                    <MovieCard movie = {movie} />
+                  </li>
                 ))}
               </ul>
             )}
