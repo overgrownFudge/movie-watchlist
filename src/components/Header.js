@@ -1,26 +1,29 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+
+
 export default function Header() {
     return (
-        <>
-            <header>
-                <div className='nav'>
-                    <h2 className="brand">Find your film</h2>
-                    <div>
-                        <ul className='nav--links'>
-                            <li>
-                                <Link to={"/"}>Search</Link>
-                            </li>
-                            <li>
-                                <Link to={"/watchlist"}>Watchlist</Link>
-                            </li>
-                            <li>
-                                <Link to={"/watched"}>Watched</Link>
-                            </li>
-                        </ul>
+        <header>
+            <div className="container">
+                <div className="inner-content">
+                    <div className="brand">
+                        <Link to="/">WatchList</Link>
                     </div>
+
+                    <ul className="nav-links">
+                        <li>
+                            <Link to={"/"}>Search</Link>
+                        </li>
+                        <li>
+                            <Link to={"/watchlist"} className="btn btn-main">Watchlist</Link>
+                        </li>
+                        <li>
+                            <Link to={"/watched"}>Watched</Link>
+                        </li>
+                    </ul>
                 </div>
-            </header>
-        </>
+            </div>
+        </header>
     )
 }
