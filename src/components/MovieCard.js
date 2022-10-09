@@ -1,6 +1,24 @@
 import React from 'react'
 
+import { useContext } from 'react'
+import { Context } from './Context'
+
 export default function MovieCard({ movie }) {
+    const { watchlist,
+        watched,
+        addToWatchlist,
+        removeFromWatched } = useContext(Context)
+
+    let storedMovie = watchlist.find((o) => o.imdbID === movie.imdbID);
+    let storedMovieWatched = watched.find((o) => o.imdbID === movie.imdbID);
+
+    const watchlistDisabled = storedMovie
+        ? true
+        : storedMovieWatched
+            ? true
+            : false;
+
+    const watchedDisabled = storedMovieWatched ? true : false;
     return (
         <div className="result-card">
             <div className="poster-wrapper">
@@ -21,6 +39,25 @@ export default function MovieCard({ movie }) {
                         {movie.Year}
                     </h4>
                 </div>
+
+                <div className="controls">
+                    <button
+                        className="btn"
+                        disabled={watchlistDisabled}
+                        onClick={() => addToWatchlist(movie)}
+                    >
+                        Add to Watchlist
+                    </button>
+
+                    <button
+                        className="btn"
+                        disabled={watchedDisabled}
+                        onClick={() => removeFromWatched(movie)}
+                    >
+                        Add to Watched
+                    </button>
+                </div>
+
             </div>
         </div>
     )
