@@ -1,20 +1,20 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 
 const Context = React.createContext()
 
-function ContextProvider({children}) {
+function ContextProvider({ children }) {
     const [watchlist, setWatchlist] = useState([])
     const [watched, setWatched] = useState([])
 
-    
+
     function addToWatchlist(newMovie) {
         setWatchlist(prevItems => [...prevItems, newMovie])
     }
-    
+
     function removeFromWatchlist(id) {
         setWatchlist(prevItems => prevItems.filter(item => item.imdbID !== id))
     }
-    
+
     function emptyWatchlist() {
         setWatchlist([])
     }
@@ -22,18 +22,18 @@ function ContextProvider({children}) {
     function addToWatched(newMovie) {
         setWatched(prevItems => [...prevItems, newMovie])
     }
-    
+
     function removeFromWatched(id) {
         setWatched(prevItems => prevItems.filter(item => item.imdbID !== id))
     }
-    
+
     return (
         <Context.Provider value={{
-            watchlist, 
-            watched, 
-            addToWatchlist, 
-            removeFromWatchlist, 
-            emptyWatchlist, 
+            watchlist,
+            watched,
+            addToWatchlist,
+            removeFromWatchlist,
+            emptyWatchlist,
             addToWatched,
             removeFromWatched
         }}>
@@ -42,4 +42,4 @@ function ContextProvider({children}) {
     )
 }
 
-export {ContextProvider, Context}
+export { ContextProvider, Context }
