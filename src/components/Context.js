@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 
 const Context = React.createContext()
 
@@ -6,6 +6,11 @@ function ContextProvider({ children }) {
     const [watchlist, setWatchlist] = useState([])
     const [watched, setWatched] = useState([])
 
+    useEffect(() => {
+        localStorage.setItem('watchlist', JSON.stringify(watchlist))
+
+        localStorage.setItem('watched', JSON.stringify(watched))
+    }, [watchlist, watched])
 
     function addToWatchlist(newMovie) {
         setWatchlist(prevItems => [...prevItems, newMovie])
