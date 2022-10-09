@@ -7,6 +7,16 @@ function ContextProvider({ children }) {
     const [watched, setWatched] = useState([])
 
     useEffect(() => {
+        setWatchlist(localStorage.getItem("watchlist")
+            ? JSON.parse(localStorage.getItem("watchlist"))
+            : [])
+
+        setWatched(localStorage.getItem("watched")
+            ? JSON.parse(localStorage.getItem("watched"))
+            : [])
+    }, [])
+
+    useEffect(() => {
         localStorage.setItem('watchlist', JSON.stringify(watchlist))
 
         localStorage.setItem('watched', JSON.stringify(watched))
