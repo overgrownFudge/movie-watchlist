@@ -7,7 +7,7 @@ export default function MovieCard({ movie }) {
     const { watchlist,
         watched,
         addToWatchlist,
-        removeFromWatched } = useContext(Context)
+        addToWatched } = useContext(Context)
 
     let storedMovie = watchlist.find((o) => o.imdbID === movie.imdbID);
     let storedMovieWatched = watched.find((o) => o.imdbID === movie.imdbID);
@@ -52,7 +52,7 @@ export default function MovieCard({ movie }) {
                     <button
                         className="btn"
                         disabled={watchedDisabled}
-                        onClick={() => removeFromWatched(movie)}
+                        onClick={() => addToWatched(movie)}
                     >
                         Add to Watched
                     </button>
