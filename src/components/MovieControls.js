@@ -3,7 +3,7 @@ import { FaEye, FaEyeSlash, FaTimes } from 'react-icons/fa'
 
 import { Context } from './Context'
 
-export default function MovieControls(movie) {
+export default function MovieControls(movie, type) {
     const { removeFromWatchlist,
         addToWatchlist,
         addToWatched,
