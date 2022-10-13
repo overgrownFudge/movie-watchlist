@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import MovieCard from './MovieCard'
+import ResultCard from './ResultCard'
 
 export default function SearchMovies() {
 
@@ -25,7 +25,7 @@ export default function SearchMovies() {
     <>
       <div className='search--page'>
         <div className='container'>
-          <div className='add-movie'>
+          <div className='add-content'>
             <div className='input-wrapper'>
               <input
                 type='text'
@@ -33,18 +33,19 @@ export default function SearchMovies() {
                 vlaue={search}
                 onChange={onChange}
               />
-              <input
-                type='button'
-                value='search'
-                onClick={onClick}
-              />
             </div>
+
+            <input
+              type='button'
+              value='search'
+              onClick={onClick}
+            />
 
             {results.length > 0 && (
               <ul className='results'>
                 {results.map((movie) => (
                   <li key={movie.imdbID}>
-                    <MovieCard movie={movie} />
+                    <ResultCard movie={movie} />
                   </li>
                 ))}
               </ul>
