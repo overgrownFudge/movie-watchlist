@@ -5,15 +5,15 @@ import { Context } from './Context'
 
 export default function MovieControls({ movie, type }) {
     const { removeFromWatchlist,
-        addToWatchlist,
-        addToWatched,
+        moveToWatchlist,
+        moveToWatched,
         removeFromWatched } = useContext(Context)
 
     return (
         <div className="inner-card-controls">
             {type === "watchlist" && (
                 <>
-                    <button className="ctrl-btn" onClick={() => addToWatched(movie)}>
+                    <button className="ctrl-btn" onClick={() => moveToWatched(movie)}>
                         <i className="fa-fw far fa-eye"><FaEye /></i>
                     </button>
 
@@ -28,7 +28,7 @@ export default function MovieControls({ movie, type }) {
 
             {type === "watched" && (
                 <>
-                    <button className="ctrl-btn" onClick={() => addToWatchlist(movie)}>
+                    <button className="ctrl-btn" onClick={() => moveToWatchlist(movie)}>
                         <i className="fa-fw far fa-eye-slash"><FaEyeSlash /></i>
                     </button>
 

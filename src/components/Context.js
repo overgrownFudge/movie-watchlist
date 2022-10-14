@@ -42,6 +42,16 @@ function ContextProvider({ children }) {
         setWatched(prevItems => prevItems.filter(item => item.imdbID !== id))
     }
 
+    function moveToWatchlist(movie) {
+        setWatchlist(prevItems => [...prevItems, movie])
+        setWatched(prevItems => prevItems.filter(item => item.imdbID !== movie.imdbID))
+    }
+
+    function moveToWatched(movie) {
+        setWatched(prevItems => [...prevItems, movie])
+        setWatchlist(prevItems => prevItems.filter(item => item.imdbID !== movie.imdbID))
+    }
+
     return (
         <Context.Provider value={{
             watchlist,
@@ -50,7 +60,9 @@ function ContextProvider({ children }) {
             removeFromWatchlist,
             emptyWatchlist,
             addToWatched,
-            removeFromWatched
+            removeFromWatched,
+            moveToWatchlist,
+            moveToWatched
         }}>
             {children}
         </Context.Provider>
