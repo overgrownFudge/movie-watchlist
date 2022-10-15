@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import { FaSearch } from 'react-icons/fa'
 
 export default function Header() {
     return (
@@ -8,18 +9,18 @@ export default function Header() {
             <div className="container">
                 <div className="inner-content">
                     <div className="brand">
-                        <Link to="/">WatchList</Link>
+                        <Link to="/">MyTop10</Link>
                     </div>
 
                     <ul className="nav-links">
                         <li>
-                            <Link to={"/"}>Search</Link>
-                        </li>
-                        <li>
-                            <Link to={"/watchlist"} className="btn btn-main">Watchlist</Link>
+                            <Link to={"/"}>Watchlist</Link>
                         </li>
                         <li>
                             <Link to={"/watched"}>Watched</Link>
+                        </li>
+                        <li>
+                            <Link to={"/search"} className="btn btn-main">Search | <FaSearch className='seach-icon'/></Link>
                         </li>
                     </ul>
                 </div>
