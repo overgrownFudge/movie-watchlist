@@ -19,11 +19,16 @@ export default function WatchList() {
         {watchlist.length > 0 ? (
           <div className="movie-grid">
             {watchlist.map((movie) => (
-              <MovieCard movie={movie} key={movie.id} type="watchlist" />
+              <MovieCard movie={movie} key={movie.imdbID} type="watchlist" />
             ))}
           </div>
         ) : (
-          <h2 className="no-movies">No movies in your list! Add some!</h2>
+                    // ADD IMAGE MAYBE?
+
+
+
+                    
+          <h2 className="no-movies">No movies on your list! <br/> Search some!</h2>
         )}
       </div>
     </div>

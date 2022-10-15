@@ -19,11 +19,15 @@ export default function Watched() {
         {watched.length > 0 ? (
           <div className="movie-grid">
             {watched.map((movie) => (
-              <MovieCard movie={movie} key={movie.id} type="watched" />
+              <MovieCard movie={movie} key={movie.imdbID} type="watched" />
             ))}
           </div>
         ) : (
-          <h2 className="no-movies">No movies in your list! Watch some!</h2>
+          // ADD IMAGE MAYBE?
+
+
+          
+          <h2 className="no-movies">No movies on your list! <br/> Watch some!</h2>
         )}
       </div>
     </div>
