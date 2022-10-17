@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
+import { useOnKeyPress } from '../hooks/useOnKeyPress'
 import ResultCard from './ResultCard'
 
 export default function SearchMovies() {
@@ -6,24 +7,13 @@ export default function SearchMovies() {
   const [search, setSearch] = useState('')
   const [results, setResults] = useState([])
 
-
-  useEffect(() => {
-    document.addEventListener('keyup', (event) => {
-      if (event.key === 'Enter') {
-        console.log('Enter key clicked')
-      }
-
-    })
-
-  }, [])
-
   const onChange = event => {
     event.preventDefault()
 
     setSearch(event.target.value.trim().toLowerCase())
   }
 
-  const onClick = () => {
+  const searchMovie = () => {
     fetch(`https://www.omdbapi.com/?page=1&s=${search}&apikey=ce1cd3c7`)
       .then(res => res.json())
       .then(data => {
@@ -31,6 +21,7 @@ export default function SearchMovies() {
       })
   }
 
+  useOnKeyPress(searchMovie, 'Enter')
 
   return (
     <>
@@ -46,11 +37,7 @@ export default function SearchMovies() {
               />
             </div>
 
-            <input
-              type='button'
-              value='search'
-              onClick={onClick}
-            />
+            <button onClick={searchMovie}>Search</button>
 
             {results.length > 0 && (
               <ul className='results'>
