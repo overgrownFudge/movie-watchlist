@@ -1,10 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ResultCard from './ResultCard'
 
 export default function SearchMovies() {
 
   const [search, setSearch] = useState('')
   const [results, setResults] = useState([])
+
+
+  useEffect(() => {
+    document.addEventListener('keyup', (event) => {
+      if (event.key === 'Enter') {
+        console.log('Enter key clicked')
+      }
+
+    })
+
+  }, [])
 
   const onChange = event => {
     event.preventDefault()
