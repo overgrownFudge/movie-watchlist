@@ -9,7 +9,7 @@ export default function SearchMovies() {
   const onChange = event => {
     event.preventDefault()
 
-    setSearch(event.target.value)
+    setSearch(event.target.value.trim().toLowerCase())
   }
 
   const onClick = () => {
