@@ -169,6 +169,7 @@ header .nav-links li:last-child {
   padding: 3px;
   font-weight: 600;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 /* Movie Page */
