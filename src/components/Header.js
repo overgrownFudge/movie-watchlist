@@ -14,7 +14,7 @@ export default function Header() {
 
                     <ul className="nav-links">
                         <li>
-                            <Link to={"/"}>Watchlist</Link>
+                            <Link to={"/watchlist"}>Watchlist</Link>
                         </li>
                         <li>
                             <Link to={"/watched"}>Watched</Link>
