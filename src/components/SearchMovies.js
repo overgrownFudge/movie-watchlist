@@ -37,7 +37,7 @@ export default function SearchMovies() {
               />
             </div>
 
-            <button onClick={searchMovie}>Search</button>
+            <button className="btn btn-search" onClick={searchMovie}>Search</button>
 
             {results.length > 0 && (
               <ul className='results'>

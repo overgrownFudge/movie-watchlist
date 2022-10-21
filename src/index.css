@@ -172,6 +172,13 @@ header .nav-links li:last-child {
   cursor: pointer;
 }
 
+.btn-search {
+  border: none;
+  padding: 7px 15px;
+  margin-top: 5px;
+  margin-left: 48%;
+}
+
 /* Movie Page */
 .movie-page {
   padding: 30px 0;
