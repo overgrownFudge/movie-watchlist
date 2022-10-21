@@ -12,7 +12,7 @@ export default function App() {
       <div>
         <Header />
         <Routes>
-          <Route path="/" element={<WatchList />} />
+          <Route path="/watchlist" element={<WatchList />} />
 
           <Route path="/watched" element={<WatchedMovies />} />
 
