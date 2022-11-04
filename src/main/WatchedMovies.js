@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import MovieCard from '../components/MovieCard';
 import { Context } from '../components/Context'
+import motion from 'framer-motion'
 
 export default function Watched() {
   const { watched } = useContext(Context)
