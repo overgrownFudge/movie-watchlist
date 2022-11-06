@@ -9,7 +9,7 @@ export default function Header() {
             <div className="container">
                 <div className="inner-content">
                     <div className="brand">
-                        <Link to="/">MyTop10</Link>
+                        <Link to="/movie-watchlist">MyTop10</Link>
                     </div>
 
                     <ul className="nav-links">
