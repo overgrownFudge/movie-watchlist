@@ -5,12 +5,17 @@ import { motion } from "framer-motion";
 
 export default function MovieCard({ movie, type }) {
   return (
-    <div className='movie-card'>
-      <div className='overlay'></div>
+    <motion.div
+      whileInView={{ x: [300, 0] }}
+      transition={{ duration: 0.85, ease: "easeIn" }}
+    >
+      <div className='movie-card'>
+        <div className='overlay'></div>
 
-      <img src={`${movie.Poster}`} alt={`${movie.Title} Poster`} />
+        <img src={`${movie.Poster}`} alt={`${movie.Title} Poster`} />
 
-      <MovieControls type={type} movie={movie} />
-    </div>
+        <MovieControls type={type} movie={movie} />
+      </div>
+    </motion.div>
   );
 }
