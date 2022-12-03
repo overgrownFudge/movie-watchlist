@@ -6,8 +6,11 @@ import { motion } from "framer-motion";
 export default function MovieCard({ movie, type }) {
   return (
     <motion.div
-      whileInView={{ x: [300, 0] }}
-      transition={{ duration: 0.85, ease: "easeIn" }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
     >
       <div className='movie-card'>
         <div className='overlay'></div>
