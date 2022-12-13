@@ -21,8 +21,11 @@ export default function MovieCard({ movie }) {
   const watchedDisabled = storedMovieWatched ? true : false;
   return (
     <motion.div
-      whileInView={{ x: [300, 0] }}
-      transition={{ duration: 0.85, ease: "easeOut" }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
     >
       <div className='result-card'>
         <div className='poster-wrapper'>
