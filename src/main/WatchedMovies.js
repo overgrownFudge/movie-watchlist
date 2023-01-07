@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import MovieCard from '../components/MovieCard';
 import { Context } from '../components/Context'
 import motion from 'framer-motion'
+import {exploreIcon} from '../../src/images/explore-Icon.png'
 
 export default function Watched() {
   const { watched } = useContext(Context)
@@ -24,11 +25,9 @@ export default function Watched() {
             ))}
           </div>
         ) : (
-          // ADD IMAGE MAYBE?
+     
+<h2 className="no-movies">No movies on your list! <br/> Watch some!</h2>
 
-
-          
-          <h2 className="no-movies">No movies on your list! <br/> Watch some!</h2>
         )}
       </div>
     </div>
