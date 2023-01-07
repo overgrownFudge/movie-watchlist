@@ -25,9 +25,13 @@ export default function Watched() {
             ))}
           </div>
         ) : (
-     
-<h2 className="no-movies">No movies on your list! <br/> Watch some!</h2>
+          <>
+          <img src= {exploreIcon} alt= 'No movies' />
 
+
+          
+<h2 className="no-movies">No movies on your list! <br/> Watch some!</h2>
+          </>
         )}
       </div>
     </div>
