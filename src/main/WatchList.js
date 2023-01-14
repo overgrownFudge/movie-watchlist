@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import MovieCard from '../components/MovieCard';
 import { Context } from '../components/Context'
+import exploreIcon from "../../src/images/explore-Icon.png";
 
 export default function WatchList() {
   const { watchlist } = useContext(Context)
