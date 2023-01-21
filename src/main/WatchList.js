@@ -24,9 +24,6 @@ export default function WatchList() {
             ))}
           </div>
         ) : (
-          // ADD IMAGE MAYBE?
-
-
           <div className='no-movies'>
             <h2 className='no-movies'>
               No movies on your list! <br /> Search some!
