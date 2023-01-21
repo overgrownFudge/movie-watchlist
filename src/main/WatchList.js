@@ -26,9 +26,13 @@ export default function WatchList() {
         ) : (
           // ADD IMAGE MAYBE?
 
-          <h2 className='no-movies'>
-            No movies on your list! <br /> Search some!
-          </h2>
+
+          <div className='no-movies'>
+            <h2 className='no-movies'>
+              No movies on your list! <br /> Search some!
+            </h2>
+            <img src={exploreIcon} alt='No movies' />
+          </div>
         )}
       </div>
     </div>
